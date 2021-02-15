@@ -54,7 +54,7 @@ device_type:
   n   = nested (on self-hosted)
   l   = logical
   c   = container
-  f   = function (e.g. Azure functions / Azure lambda)
+  f   = function (e.g. Azure functions / AWS lambda)
   
 service_level:
   0   = test
