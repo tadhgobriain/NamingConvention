@@ -28,7 +28,8 @@ This is entirely malleable and numbers assigned are unique, but for the most par
     01  = school of business
     10  = department of applied science
     20  = department of computing
-    21  = Azure WVD (windows virtual desktop) resource group (computing)
+    21  = Azure WVD (windows virtual desktop) resource group (department of computing)
+    22  = Teaching cluster (department of computing)
     30  = school of engineering
     97  = staff desktops (could be split into different staff areas)
     98  = staff desktops (hotspots)
@@ -50,13 +51,14 @@ os/hypervisor_type:
 device_type:
   p   = physical
   v   = virtual
+  n   = nested (on self-hosted)
   l   = logical
   c   = container
   f   = function (e.g. Azure functions / Azure lambda)
   
 service_level:
   0   = test
-  1   = dev
+  1   = dev/teaching
   2   = general desktop use
   3   = paas (platform as a service)
   4   = saas (software as a service) (may still need configuring or a reference name)
@@ -130,6 +132,10 @@ t20-wsp5-dc1: tallaght, department of computing, windows server, physical, infra
 t20-lv0-tob-01: tallaght, department of computing, linux client, virtual, test, owner (Tadhg), number 01
 t20-cl2-lsw2: tallaght, department of computing, cluster 2, logical switch 2
 t20-ep5-cl1-05: tallaght, department of computing, esxi server, physical, infrastructure, cluster 1, node 05
+
+t22-ep5- : tallaght, teaching cluster (department of computing), esxi server, physical, infrastructure
+t22-ev1- : tallaght, teaching cluster (department of computing), esxi server, virtual, teaching
+t22-wsn0-dc1: tallaght, teaching cluster (department of computing), windows server, nested, test, domain controller, number 1
 
 Device ID:
 t20-wsp5-dc1-oob: tallaght, department of computing, windows server, physical, infrastructure, domain controller, number 1, out-of-band port
