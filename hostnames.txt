@@ -15,6 +15,8 @@ Notes:
 
 (3) location: for internal use only on, for example, network IP assignment docs
 
+(4) Areas still to deal with: WVD resource groups
+
 Key:
 site/responsibility code:
 The resource could be located on one of the below campuses or it could be a cloud resource but owned by specific site.
