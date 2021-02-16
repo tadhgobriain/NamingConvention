@@ -15,7 +15,7 @@ Notes:
 
 (3) location: for internal use only on, for example, network IP assignment docs
 
-(4) Areas still to deal with: WVD resource groups
+(4) Areas possibly still to deal with: WVD resource groups, Kubernetes cluster
 
 Key:
 site/responsibility code:
