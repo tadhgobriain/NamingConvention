@@ -90,6 +90,7 @@ device_role:
 logical_grouping:
 Will probably need to allow for more than 1...9 but could use functional area code to offset this.
   cl = cluster
+  d  = vdi desktop
 
 component_type:
   eth = ethernet network device 
@@ -119,9 +120,11 @@ composition:
 or
 {site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{room}-{number}
 or
+{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{client logical group}-{number}
+or
 {site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{device_role{number}}
 or
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{logical_grouping{number}}
+{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{infrastructure logical group{number}}
 or
 {site_code}{functional_area}-{logical_grouping}{number}-{device_role}{number}
 
@@ -134,7 +137,8 @@ t20-wp2-216-01: tallaght, department of computing, windows client,  physical, de
 t20-wsp6-dc1: tallaght, department of computing, windows server, physical, infrastructure, domain controller, number 1
 t20-lv0-tob-01: tallaght, department of computing, linux client, virtual, test, owner (Tadhg), number 01
 t20-cl2-lsw2: tallaght, department of computing, cluster 2, logical switch 2
-t20-ep6-cl1-05: tallaght, department of computing, esxi server, physical, infrastructure, cluster 1, node 05
+t20-ep6-cl1-05: tallaght, department of computing, esxi server, physical, infrastructure, cluster 1 (infrastrure logical group), node 05
+t20-lv2-d02-01: tallaght, department of computing, linux client, virtual, teaching, desktop group 02 (client logical group (vdi)), number 01
 
 Nested cluster examples:
 3 levels: L0 = physical, L1 = virtual, L2 = nested virtual
