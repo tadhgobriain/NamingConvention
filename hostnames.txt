@@ -116,7 +116,7 @@ number                    = client:{01,02..99}, server:{1,2..9}, node:{01,02..99
 component_type            = {eth|oob|ser}
 
 composition:
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{{owner}-{number}
+{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{owner}-{number}
 or
 {site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{room}-{number}
 or
