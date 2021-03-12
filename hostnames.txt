@@ -7,6 +7,7 @@ Constructive suggestions welcome. Please submit an issue.
 Advantages:
 (1) Reduces Active Directory naming conflicts
 (2) Allows for better automation
+(3) Can search for host groups more easily. e.g. How many virtual domain controllers of service_level 6 (infrastructure/production) are there in the AD forest?
 
 Notes:
 (1) https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/naming-conventions-for-computer-domain-site-ou
@@ -15,7 +16,7 @@ Notes:
 
 (3) location: for internal use only on, for example, network IP assignment docs
 
-(4) Areas possibly still to deal with: WVD resource groups, Kubernetes cluster
+(4) Areas possibly still to deal with: WVD resource groups, mobile devices, loaned devices, Kubernetes cluster.
 
 Key:
 site/responsibility code:
