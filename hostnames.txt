@@ -63,7 +63,7 @@ service_level:
   0   = test
   1   = dev
   2   = teaching
-  3   = general desktop use
+  3   = general desktop use (non-teaching)
   4   = paas (platform as a service)
   5   = saas (software as a service) (may still need configuring or a reference name)
   6   = infrastructure (production)
