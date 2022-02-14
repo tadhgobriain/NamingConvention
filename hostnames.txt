@@ -82,6 +82,7 @@ device_role:
   bkp = backup server
   sw  = switch
   lsw = logical switch
+  usw = unmanaged switch
   vsw = virtual switch
   rt  = router
   san = storage area network
