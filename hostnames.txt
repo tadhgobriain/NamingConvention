@@ -82,8 +82,8 @@ device_role:
   bkp = backup server
   sw  = switch
   lsw = logical switch
-  usw = unmanaged switch
   vsw = virtual switch
+  usw = unmanaged switch
   rt  = router
   san = storage area network
   nas = network attached storage
@@ -95,11 +95,14 @@ Will probably need to allow for more than 1...9 but could use functional area co
   d  = vdi desktop
 
 component_type:
-  eth = ethernet network device 
-  oob = out of band network device (e.g. iDrac)
-  ser = serial port
-  fib = fibre channel
-  inf = infiniband
+  eth   = ethernet network device 
+  oob   = out of band network port (management port)
+  cns   = switch console port
+  mgmt  = switch management port
+  fbr   = fibre channel
+  inf   = infiniband
+  ncb   = ethernet network cable
+  pcb   = power cable   
 
 location:
 '@' followed by {hypervisor|room|logical_grouping}
