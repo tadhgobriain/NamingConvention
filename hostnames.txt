@@ -101,8 +101,8 @@ component_type:
   mgmt  = switch management port
   fbr   = fibre channel
   inf   = infiniband
-  ncb   = ethernet network cable
-  pcb   = power cable   
+  net   = ethernet network cable
+  pwr   = power cable   
 
 location:
 '@' followed by {hypervisor|room|logical_grouping}
