@@ -30,9 +30,9 @@ This is entirely malleable and numbers assigned are unique, but for the most par
   Tallaght:
     01  = school of business
     10  = department of applied science
-    20  = department of computing
-    21  = Azure WVD (windows virtual desktop) resource group (department of computing)
-    22  = Teaching cluster (department of computing)
+    20  = school of enterprise computing and digital transformation
+    21  = Azure WVD (windows virtual desktop) resource group (school of enterprise computing and digital transformation)
+    22  = Teaching cluster (school of enterprise computing and digital transformation)
     30  = school of engineering
     97  = staff desktops (could be split into different staff areas)
     98  = staff desktops (hotspots)
@@ -91,8 +91,10 @@ device_role:
 
 logical_grouping:
 Will probably need to allow for more than 1...9 but could use functional area code to offset this.
-  cl = cluster
-  d  = vdi desktop
+    infrastructure:
+      cl = cluster
+    client:
+      d  = vdi desktop
 
 component_type:
   eth   = ethernet network device 
@@ -121,38 +123,40 @@ number                    = client:{01,02..99}, server:{1,2..9}, node:{01,02..99
 component_type            = {eth|oob|ser}
 
 composition:
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{owner}-{number}
-or
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{room}-{number}
-or
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{client logical group}-{number}
-or
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{device_role{number}}
-or
-{site_code}{functional_area}-{os/hypervisor_type}{device_type}{service_level}-{infrastructure logical group{number}}
-or
-{site_code}{functional_area}-{logical_grouping}{number}-{device_role}{number}
-
+{site_code}{functional_area}-
+    {os/hypervisor_type}{device_type}{service_level}-
+    {os/hypervisor_type}{device_type}{service_level}-
+    {os/hypervisor_type}{device_type}{service_level}-
+    {os/hypervisor_type}{device_type}{service_level}/{out of bound}-
+    {os/hypervisor_type}{device_type}{service_level}/{out of bound}-
+    {logical_grouping}{number}-{device_role}{number}
+        {owner}-{number}
+        {room}-{number}
+        {client logical group}-{number}
+        {device_role{number}}
+        {infrastructure logical group{number}}
+        
 Or to identify a device component on a device (not for host naming purposes) just append to name
 -{component_type}{number}
 
 Examples:
 Hostnames:
-t20-wp2-216-01: tallaght, department of computing, windows client,  physical, desktop use, room 216, number 01
-t20-wsp6-dc1: tallaght, department of computing, windows server, physical, infrastructure, domain controller, number 1
-t20-lv0-tob-01: tallaght, department of computing, linux client, virtual, test, owner (Tadhg), number 01
-t20-cl2-lsw2: tallaght, department of computing, cluster 2, logical switch 2
-t20-ep6-cl1-05: tallaght, department of computing, esxi server, physical, infrastructure, cluster 1 (infrastrure logical group), node 05
-t20-lv2-d02-01: tallaght, department of computing, linux client, virtual, teaching, desktop group 02 (client logical group (vdi)), number 01
+t20-wp2-216-01: tallaght, school of enterprise computing, windows client, physical, desktop use, room 216, number 01
+t20-wsp6-dc1: tallaght, school of enterprise computing, windows server, physical, infrastructure, domain controller, number 1
+t20-lv0-tob-01: tallaght, school of enterprise computing, linux client, virtual, test, owner (Tadhg), number 01
+t20-cl2-lsw2: tallaght, school of enterprise computing, cluster 2, logical switch 2
+t20-ep6-cl1-05: tallaght, school of enterprise computing, esxi server, physical, infrastructure, cluster 1 (infrastrure logical group), node 05
+t20-lv2-d02-01: tallaght, school of enterprise computing, linux client, virtual, teaching, desktop group 02 (client logical group (vdi)), number 01
+t20-cl2-lsw2: tallaght, school of enterprise computing, cluster 2, logical switch 2
 
 Nested cluster examples:
 3 levels: L0 = physical, L1 = virtual, L2 = nested virtual
-t22-ep6-cl4-03 : tallaght, teaching cluster (department of computing), esxi server, physical, infrastructure, node 03
-t22-ev2-03-02 : tallaght, teaching cluster (department of computing), esxi server, virtual, teaching, logical group 03, node 02 
-t22-wsn0-dc1: tallaght, teaching cluster (department of computing), windows server, nested, test, domain controller, number 1
+t22-ep6-cl4-03 : tallaght, teaching cluster (school of enterprise computing), esxi server, physical, infrastructure, node 03
+t22-ev2-03-02 : tallaght, teaching cluster (school of enterprise computing), esxi server, virtual, teaching, logical group 03, node 02 
+t22-wsn0-dc1: tallaght, teaching cluster (school of enterprise computing), windows server, nested, test, domain controller, number 1
 For referencing, one can identify the guest's host by '@'. e.g. t22-wsn0-dc1@t22-ev2-03-02@t22-ep6-cl4-03
 By using '22', a seperate functional area, instead of '20', it allows us more scope for group naming.
 
 Device ID:
-t20-wsp5-dc1-oob: tallaght, department of computing, windows server, physical, infrastructure, domain controller, number 1, out-of-band port
-t20-cl2-sw2-ser: tallaght, department of computing, cluster 2, switch 2, serial port
+t20-wsp5-dc1-oob: tallaght, school of enterprise computing, windows server, physical, infrastructure, domain controller, number 1, out-of-band port
+t20-cl2-sw2-ser: tallaght, school of enterprise computing, cluster 2, switch 2, serial port
