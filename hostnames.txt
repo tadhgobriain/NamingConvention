@@ -122,19 +122,21 @@ logical_grouping          = {cl}
 number                    = client:{01,02..99}, server:{1,2..9}, node:{01,02..99}, device:{1,2..9}
 component_type            = {eth|oob|ser}
 
-composition:
-{site_code}{functional_area}-
-    {os/hypervisor_type}{device_type}{service_level}-
-    {os/hypervisor_type}{device_type}{service_level}-
-    {os/hypervisor_type}{device_type}{service_level}-
-    {os/hypervisor_type}{device_type}{service_level}/{out of bound}-
-    {os/hypervisor_type}{device_type}{service_level}/{out of bound}-
-    {logical_grouping}{number}-{device_role}{number}
-        {owner}-{number}
-        {room}-{number}
-        {client logical group}-{number}
-        {device_role{number}}
-        {infrastructure logical group{number}}
+Composition:
+(1){site_code}{functional_area}-
+      (2){os/hypervisor_type}{device_type}{service_level}-
+		        (3){owner}-
+		        (3){client logical group}-
+		        (3){infrastructure logical group}-
+			            (4){number}
+		        (3){device_role}{number}	
+	    (2){infrastructure logical_grouping}{number}-
+		        (3){device_role}{number}
+      (2){out of bound}-
+		        (3){client logical group}-
+            (3){infrastructure logical group}-
+			            (4){number}
+		        (3){device_role}{number}
         
 Or to identify a device component on a device (not for host naming purposes) just append to name
 -{component_type}{number}
@@ -147,7 +149,7 @@ t20-lv0-tob-01: tallaght, school of enterprise computing, linux client, virtual,
 t20-cl2-lsw2: tallaght, school of enterprise computing, cluster 2, logical switch 2
 t20-ep6-cl1-05: tallaght, school of enterprise computing, esxi server, physical, infrastructure, cluster 1 (infrastrure logical group), node 05
 t20-lv2-d02-01: tallaght, school of enterprise computing, linux client, virtual, teaching, desktop group 02 (client logical group (vdi)), number 01
-t20-cl2-lsw2: tallaght, school of enterprise computing, cluster 2, logical switch 2
+t20-oob-cl2-03: tallaght, school of enterprise computing, oob, cluster 2, node 03
 
 Nested cluster examples:
 3 levels: L0 = physical, L1 = virtual, L2 = nested virtual
