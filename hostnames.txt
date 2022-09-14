@@ -134,7 +134,7 @@ Composition:
 		        (3){device_role}{number}
       (2){out of bound}-
 		        (3){client logical group}-
-            (3){infrastructure logical group}-
+            		(3){infrastructure logical group}-
 			            (4){number}
 		        (3){device_role}{number}
         
