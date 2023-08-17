@@ -75,11 +75,13 @@ May be used for developers (student/staff) needing dedicated boxes.
   tob = Tadhg Ó Briain (for admin jumpbox)
 
 device_role:
+  ans = ansible server
+  bkp = backup server
   dc  = domain controller
-  ds  = deployment server
   db  = database
   dbo = oracle database
-  bkp = backup server
+  dr  = disaster recovery
+  ds  = deployment server
   sw  = switch
   lsw = logical switch
   vsw = virtual switch
