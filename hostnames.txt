@@ -60,13 +60,14 @@ device_type:
   f   = function (e.g. Azure functions / AWS lambda)
   
 service_level:
-  0   = test
-  1   = dev
-  2   = teaching
+  0   = admin/dev/test
+  1   = admin/dev/bugfix
+  2   = student/teaching
   3   = general desktop use (non-teaching)
-  4   = paas (platform as a service)
-  5   = saas (software as a service) (may still need configuring or a reference name)
-  6   = infrastructure (production)
+  4   = admin/paas (platform as a service)
+  5   = admin/saas (software as a service) (may still need configuring or a reference name)
+  6   = admin/infrastructure (production)
+  7   = student/dev
  
 owner:
 Needed when admins need a jumpbox/test box.
