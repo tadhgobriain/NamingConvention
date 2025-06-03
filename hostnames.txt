@@ -48,6 +48,7 @@ os/hypervisor_type:
   h   = hyper-v
   e   = esxi/vmware
   k   = kvm
+  n   = open nebula
   p   = proxmox
   c   = citrix
   
